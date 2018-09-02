@@ -1,0 +1,142 @@
+//@import url("https://use.typekit.net/xtg4uih.css");
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400i|Work+Sans:300,400,700');
+
+$base_height: 6px;
+
+//Theme Specific
+$base_color: #455A64;
+$base_accent: #009688;
+
+//$light_color: #F4F4F9;
+$light_color:#CFD8DC;
+$light_accent: #607D8B;
+
+$dark_blue: #1C3669;	
+
+$light_border_color: #eee;	
+
+$text_color: #212121;
+$text_gray: #757575;
+
+//$heading_font: "tenez", serif;
+$heading_font: "kepler-std", serif;
+// $heading_font: 'Libre Baskerville', serif;
+
+//$body_font:   "effra", sans-serif;
+// $body_font: "Poppins", sans-serif;
+$body_font: "Work Sans", sans-serif;
+
+
+
+//$italic_font: "adobe-garamond-pro", serif; 
+$italic_font: 'Libre Baskerville', serif;
+
+
+
+$theme_blue: rgba(51,94,172,1);
+$theme_orange: rgba(235, 105, 85, 1);
+$theme_green: rgba(66, 169, 113, 1);
+$theme_light: rgba(206,214,224,1);
+
+$pn_blue_gradient: linear-gradient(to right, #72BCFF, #3D82F0);
+$pn_blue_gradient_b: linear-gradient(to bottom left, #72BCFF, #3D82F0);
+$pn_blue_gradient_o: linear-gradient(to right, rgba(#72BCFF, .5), rgba(#3D82F0, .5));
+
+//$theme_color: $theme_green;
+//$theme_color: #16a085;
+//$theme_color: #B33771;
+//$theme_color: #a29bfe;
+//$theme_color: #a55eea;
+//$theme_color: #F97F51;
+//$theme_color: #0fbcf9;
+//$theme_color: #ffd32a;
+//$theme_color: #EA2027;
+//$theme_color: #2e86de;
+//$theme_color: #82589F;
+//$theme_color: #B33771;
+$theme_color: #079992;
+
+// ==========================================================================
+// Base – Variables
+// ==========================================================================
+
+// Global Typography
+$base-background-color:                         #fff !default;
+$base-font-family:                              $body_font;
+$base-font-size:                                16 !default;
+$base-line-height:                              22 !default;
+$base-font-weight:                              400 !default;
+$base-font-color:                               #333 !default;
+$base-link-color:                               #333 !default;
+$base-link-hover-color:                         #333 !default;
+
+// Headings
+$base-heading-font-family:                      $heading_font, sans-serif !default;
+$base-h1-font-size:                             32 !default;
+$base-h1-line-height:                           38 !default;
+$base-h1-font-weight:                           700 !default;
+$base-h1-color:                                 #333 !default;
+$base-h2-font-size:                             26 !default;
+$base-h2-line-height:                           32 !default;
+$base-h2-font-weight:                           700 !default;
+$base-h2-color:                                 #333 !default;
+$base-h3-font-size:                             22 !default;
+$base-h3-line-height:                           28 !default;
+$base-h3-font-weight:                           700 !default;
+$base-h3-color:                                 #333 !default;
+$base-h4-font-size:                             18 !default;
+$base-h4-line-height:                           24 !default;
+$base-h4-font-weight:                           700 !default;
+$base-h4-color:                                 #333 !default;
+$base-h5-font-size:                             16 !default;
+$base-h5-line-height:                           22 !default;
+$base-h5-font-weight:                           700 !default;
+$base-h5-color:                                 #333 !default;
+$base-h6-font-size:                             14 !default;
+$base-h6-line-height:                           20 !default;
+$base-h6-font-weight:                           700 !default;
+$base-h6-color:                                 #333 !default;
+
+// Blockquotes
+$base-blockquote-font-family:                   $body_font, sans-serif !default;
+$base-blockquote-font-size:                     22 !default;
+$base-blockquote-line-height:                   28 !default;
+
+// Code
+$base-code-font-family:                         monospace, monospace !default;
+$base-code-font-size:                           13 !default;
+$base-code-line-height:                         18 !default;
+$base-code-color:                               #000 !default;
+$base-code-background-color:                    transparent !default;
+$base-code-border-color:                        #d7d7d7 !default;
+
+// Forms
+$base-input-height:                             36px !default;
+$base-input-placeholder-color:                  #999 !default;
+$base-input-color:                              #000 !default;
+$base-input-background-color:                   #fff !default;
+$base-input-background-focus-color:             #fff !default;
+$base-input-border-color:                       #ccc !default;
+$base-input-border-focus-color:                 $base_color !default;
+$base-select-box-height:                        36px;
+
+// Grid Alignment
+$grid-alignment:                                left;
+
+// Grid Containers
+$container:                                     100% !default;
+$container-m:                                   720px !default;
+$container-l:                                   960px !default;
+$container-xl:                                  1120px !default;
+
+// Grid Gutters
+$grid-gutter:                                   15px !default;
+$grid-gutter-m:                                 15px !default;
+$grid-gutter-l:                                 15px !default;
+$grid-gutter-xl:                                15px !default;
+
+// Responsive Breakpoints
+$breakpoint-m:                                  ($container-m + 20) !default;
+$breakpoint-l:                                  ($container-l + 20) !default;
+$breakpoint-xl:                                 ($container-xl + 20) !default;
+

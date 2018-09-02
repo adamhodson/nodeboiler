@@ -1,0 +1,49 @@
+{% extends './layouts/default.html' %}
+
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+<div class="register page">
+
+    <div class="wrap">
+        <div class="title center white">
+            <h2>Sign Up For YourSpace</h2>
+            <h3 class="thin">Register for free using an email address or social profile.</h3>
+        </div>
+
+        <div class="register-form">
+            <div class="error">
+                <div class="container">
+                    <div class="title pink">
+                        <h3>That Email Address Is Already Registered.</h3>
+                    </div>
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="sending">
+                <div class="container">
+
+                    <div class="title pink">
+                        <h3>Please Wait. We're Creating Your Account.</h3>
+                    </div>
+                    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+
+                </div>
+
+
+
+            </div>
+
+            {% include "partials/register-form.html" %}
+        
+        </div>
+
+
+    </div>
+
+</div>
+
+
+{% endblock %}

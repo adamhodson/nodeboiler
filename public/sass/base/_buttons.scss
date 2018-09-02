@@ -1,0 +1,137 @@
+// ==========================================================================
+// Base – Assets
+// ==========================================================================
+
+// Custom Buttons
+.button {
+  cursor: pointer;
+  border: 1px solid #d7d7d7;
+  background-color: #f3f3f3;
+  line-height: normal;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #363636;
+  display: inline-block;
+  transition: all 0.3s;
+  &:hover, &:active { text-decoration: none; }
+  &:hover { background: #f9f9f9; }
+}
+.button-primary {
+  // Add your styles here
+}
+.button-secondary {
+  // Add your styles here
+}
+
+
+.round-button{
+  border-radius:35px;
+  display:inline-block;
+  padding:12px 36px;
+  overflow:hidden;  
+  transition:all .2s ease-in;   
+    &.white{
+      border:1px solid #fff;        
+      color:#fff; 
+      &:hover{
+        transition:all .2s ease-in;
+        background:#fff;
+        color:$base_color;  
+      }  
+    }
+} 
+
+
+.flat-btn{
+  border-radius:3px;
+  display:inline-block;
+  padding:12px 30px;  
+  font-weight:bold;
+  border:0;  
+  text-transform:uppercase;
+  font-size:16px;  
+  overflow:hidden;  
+  text-wrap:nowrap;
+  position:relative;  
+  top:0px;  
+  // margin-top:2px;  
+  transition:all .15s ease-in; 
+  clear:both;   
+  font-weight:bold !important;  
+  box-shadow:0 3px 12px rgba(#000, 0);  
+  letter-spacing:3.5px;  
+  &:before{
+    content:"";
+    width:100%;
+    height:100%;
+    background-image:linear-gradient(to right, rgba(#f0f0f0, .5), rgba(#fff, .2), rgba(#f0f0f0, .6));
+    opacity:.5;
+    transform:rotate(45deg);  
+    position:absolute;
+    top:0;
+    left:-100%;  
+    transition:all 0s ease-in;
+  }
+  &:hover{
+    &:before{
+      left:100%;
+      transition:all .5s ease-in;  
+    }
+    box-shadow:0 3px 12px rgba(#000, .2);  
+  }  
+  &.blue{
+    background:linear-gradient($base_color, darken($base_color,2));
+    color:$light_color;  
+       &:hover{      
+        // margin-top:0px;  
+        
+        transition:all .15s ease-in;
+      }  
+  }  
+  &.light{
+    background:$light_color;
+    color:$base_color;   
+  }
+  &.light-accent{
+    background:$light_color;
+    color:$base_color;
+      &:hover{            
+      transition:all .15s ease-in;      
+    }  
+  }    
+  &:hover{    
+    transition:all .15s ease-in;
+  }  
+  &.small{
+    font-size:13px;
+    padding:12px 20px;  
+  }
+  &.med{
+    font-size:14px;
+    padding:13px 24px;  
+  }
+}    
+
+.buttons{
+  &.center{
+    text-align:center;
+    a,button{
+      margin:0 6px;
+      font-weight:300;  
+    }
+  }
+}
+
+.action-link{
+  display: inline-block;
+  font-weight:bold;
+  &:after{
+    content:"\279d";
+    display: inline-block;        
+    font-size:18px;
+    line-height:24px;
+    margin-left:4px;
+    position: relative;
+    top: 2px;
+  }
+}
