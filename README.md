@@ -10,9 +10,10 @@ HAPI, HAPI-AUTH-COOKIE, SEQUELIZE, SWIG, GULP, SASS, JQUERY
 $ git clone https://github.com/bricks-mortar/nodeboiler.git
 $ cd nodeboiler
 $ npm install
-```
+
 
 Start the server by running the command:
+
 ```
 $ node server
 ```
