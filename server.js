@@ -20,30 +20,6 @@ const defaultContext = {
     root_url: 'http://localhost:3000/'
 }
 
-
-
-// const validate = async (request, session) => {
-
-//     const cached = await server.app.cache.get(session.id);
-// //    const cached = await server.app.cache.get(session.id);
-
-//     console.log('hu')
-//     console.log(cached)
-//     // return 1;
-
-//     const out = {
-//         valid: !!cached
-//     };
-
-//     if (out.valid) {
-//         out.credentials = cached.account;
-//     }
-
-//     return out;
- 
-// };
-
-
 const init = async () => {
 
     await server.register([        
