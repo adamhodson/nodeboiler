@@ -1,8 +1,8 @@
-var Sequelize = require('sequelize');
+const Sequelize = require('sequelize');
 
 module.exports = function(sequelize, DataTypes) {
 
-    var User = sequelize.define('user', {
+    let User = sequelize.define('user', {
         first_name: Sequelize.TEXT,
         last_name: Sequelize.TEXT,
         email: Sequelize.STRING,

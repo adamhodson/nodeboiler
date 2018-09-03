@@ -2,7 +2,7 @@ var Sequelize = require('sequelize');
 
 module.exports = function(sequelize, DataTypes) {
 
-    var Event = sequelize.define('event', {
+    let Event = sequelize.define('event', {
         name: Sequelize.STRING,        
         date: Sequelize.DATE,        
     });

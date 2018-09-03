@@ -22,15 +22,15 @@ exports.register = function(request, h){
 
 exports.insert_user = function(request, h){
 
-    var first_name = request.payload.first_name
-    var last_name = request.payload.last_name
-    var email = request.payload.email
-    var username = first_name + '_' + last_name
-    var phone = request.payload.phone
-    var user_type = request.payload.user_type
-    var password = request.payload.password
+    let first_name = request.payload.first_name
+    let last_name = request.payload.last_name
+    let email = request.payload.email
+    let username = first_name + '_' + last_name
+    let phone = request.payload.phone
+    let user_type = request.payload.user_type
+    let password = request.payload.password
     
-    var pw_hash = bcrypt.hashSync(password, salt);
+    let pw_hash = bcrypt.hashSync(password, salt);
 
     let results = models.user.findOrCreate({
                                             where:{            
@@ -69,7 +69,7 @@ exports.login = function(request, h){
     let account = '';
     
 
-    var validation = models.user.findOne({
+    let validation = models.user.findOne({
                             where: {
                                 email: email
                             }
@@ -78,22 +78,20 @@ exports.login = function(request, h){
                                 return "No user with that email";
                             }
                             else{
-                                // return "user with that email";
 
-                                var the_user = user;
-                                var user_email = user.email;
-                                var submitted_password = password;
-                                var stored_pw = user.password;  
+                                let the_user = user;
+                                let user_email = user.email;
+                                let submitted_password = password;
+                                let stored_pw = user.password;  
 
                             
-                                var authed = bcrypt.compare(submitted_password, stored_pw).then( auth => {
+                                let authed = bcrypt.compare(submitted_password, stored_pw).then( auth => {
                                     if( auth === true ){
                                         
 
                                         let uuid = uuidv1();
 
-                                        let sid = String(uuid);                                        
-                                        console.log('hehh')
+                                        let sid = String(uuid);                                                                                
                                         console.log(sid)
 
                                         let account = {
@@ -106,11 +104,11 @@ exports.login = function(request, h){
 
                                       
                                         //return cookie_auth;
-                                        return "Authed";
+                                        return true;
 
                                     }
                                     else{
-                                        return 'User Not Authed';
+                                        return false;
                                     }                                    
                                 })
                                 return authed; 

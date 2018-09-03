@@ -3,8 +3,8 @@ exports.about = function(request, h){
 	console.log(request.auth.credentials)
 
     return h.view('about', {
-        title: 'About Yo!',
-        content: "Let's Go YOOOOOOO",
+        title: 'About Page',
+        content: "Some Template Content",
         page_path: request.route.settings.id,
         session: JSON.stringify(request.session),
         isLoggedIn: request.auth.isAuthenticated

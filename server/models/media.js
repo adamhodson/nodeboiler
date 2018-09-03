@@ -1,8 +1,8 @@
-var Sequelize = require('sequelize');
+const Sequelize = require('sequelize');
 
 module.exports = function(sequelize, DataTypes) {
 
-    var Media = sequelize.define('media', {
+    let Media = sequelize.define('media', {
         name: Sequelize.TEXT,
         media_type: Sequelize.TEXT,
         media_url: Sequelize.STRING,                       

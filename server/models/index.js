@@ -17,7 +17,7 @@ const sequelize = new Sequelize('nodeboiler', 'root', 'root', {
   operatorsAliases: false
 });
 
-var db = {};
+let db = {};
 
 fs.readdirSync(__dirname)
     .filter(function(file) {
@@ -30,7 +30,7 @@ fs.readdirSync(__dirname)
 
 
 //Create Associations
-var User = db.user,
+let User = db.user,
     Location = db.location,
     Amenity = db.amenity,
     Event = db.event,
@@ -44,43 +44,12 @@ var User = db.user,
 //Associations
 
 //User Assocations
-User.hasMany(Location);
-Location.belongsTo(User);
+// User.hasMany(Location);
+// Location.belongsTo(User);
 
-User.hasMany(Message);
-Message.belongsTo(User);
+// User.hasMany(Message);
+// Message.belongsTo(User);
 
-
-//Location Associations
-Location.hasMany(Amenity);
-Amenity.belongsTo(Location);
-
-Amenity.hasOne(Gallery);
-Gallery.belongsTo(Amenity);
-
-Amenity.hasOne(Calendar);
-Calendar.belongsTo(Amenity);
-
-Location.hasMany(SubscriptionType);
-SubscriptionType.belongsTo(Location);
-
-Location.hasMany(Gallery);
-Gallery.belongsTo(Location);
-
-Gallery.hasMany(Media);
-Media.belongsTo(Gallery);
-
-Location.hasMany(Calendar);
-Calendar.belongsTo(Location);
-
-Calendar.hasMany(Event);
-Event.belongsTo(Calendar);
-
-Location.hasMany(Event);
-Event.belongsTo(Location);
-
-Event.hasOne(Gallery);
-Gallery.belongsTo(Event);
 
 
 Object.keys(db).forEach(function(modelName) {

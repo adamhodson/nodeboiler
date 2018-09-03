@@ -1,7 +1,6 @@
 const Index = require('../controllers/index');
 const About = require('../controllers/about');
 const User = require('../controllers/user');
-const Location = require('../controllers/locations');
 const Joi = require('joi');
 
 module.exports = [
@@ -28,15 +27,6 @@ module.exports = [
 
         }
     },    
-    {
-        method: 'POST',
-        path: '/add-location',
-        config: {
-            handler: Location.insert_location,
-            id: 'add-location',
-            auth: false
-        }
-    },
     {
         method: 'GET',
         path: '/register',

@@ -55,11 +55,8 @@ const init = async () => {
 
             return out;
 
-        }
-        // verifyOptions: { algorithms: [ 'HS256' ] } // pick a strong algorithm
+        }        
     });
-
-    // server.auth.default('jwt'); 
 
     await server.register([
         require('inert'),        
