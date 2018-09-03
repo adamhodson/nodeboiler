@@ -1,4 +1,7 @@
 exports.about = function(request, h){
+	console.log('yuh')
+	console.log(request.auth.credentials)
+
     return h.view('about', {
         title: 'About Yo!',
         content: "Let's Go YOOOOOOO",

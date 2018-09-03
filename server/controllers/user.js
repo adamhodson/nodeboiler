@@ -96,8 +96,11 @@ exports.login = function(request, h){
                                         console.log('hehh')
                                         console.log(sid)
 
-                                        let account = user_email;
-                                       
+                                        let account = {
+                                            email: user_email,
+                                            scope: 'user'
+                                        };
+                                        
                                         request.server.app.cache.set(sid, { account }, 0);
                                         request.cookieAuth.set({ sid, scope: 'user', uid: the_user.id });
 

@@ -21,10 +21,10 @@ module.exports = [
             handler: About.about,
             id: 'about',
             auth: {
-                    strategy: 'session'
-                    
-                }
-            //plugins: { 'hapi-auth-cookie': { redirectTo: '/login'} }
+                    strategy: 'session',
+                    scope: 'user'
+                },
+            plugins: { 'hapi-auth-cookie': { redirectTo: '/login'} }
 
         }
     },    
