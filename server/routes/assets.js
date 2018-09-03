@@ -6,6 +6,9 @@ module.exports = [
             directory: { 
                 path: '../views/partials'
             }
+        },
+        config:{
+            auth: false
         }
     },
     {
@@ -15,7 +18,11 @@ module.exports = [
             directory: { 
                 path: '../public/images'
             }
+        },
+        config:{
+            auth: false
         }
+        
     },
     {
         method: 'GET',
@@ -24,6 +31,9 @@ module.exports = [
             directory: { 
                 path: '../public/css'
             }
+        },
+        config:{
+            auth: false
         }
     },
     {
@@ -33,6 +43,9 @@ module.exports = [
             directory: { 
                 path: '../public/js'
             }
+        },
+        config:{
+            auth: false
         }
     },
     {
@@ -42,6 +55,9 @@ module.exports = [
             directory: { 
                 path: '../dist/js'
             }
+        },
+        config:{
+            auth: false
         }
     }
 ]

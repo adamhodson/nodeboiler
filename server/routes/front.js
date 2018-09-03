@@ -1,7 +1,8 @@
-var Index = require('../controllers/index');
-var About = require('../controllers/about');
-var User = require('../controllers/user');
-var Location = require('../controllers/locations');
+const Index = require('../controllers/index');
+const About = require('../controllers/about');
+const User = require('../controllers/user');
+const Location = require('../controllers/locations');
+const Joi = require('joi');
 
 module.exports = [
      {
@@ -9,7 +10,8 @@ module.exports = [
         path: '/',
         config: {
             handler: Index.index,
-            id: 'index'
+            id: 'index',
+            auth: false
         }
     },
     {
@@ -17,7 +19,13 @@ module.exports = [
         path: '/about',
         config: {
             handler: About.about,
-            id: 'about'
+            id: 'about',
+            auth: {
+                    strategy: 'session'
+                    
+                }
+            //plugins: { 'hapi-auth-cookie': { redirectTo: '/login'} }
+
         }
     },    
     {
@@ -25,7 +33,8 @@ module.exports = [
         path: '/add-location',
         config: {
             handler: Location.insert_location,
-            id: 'add-location'
+            id: 'add-location',
+            auth: false
         }
     },
     {
@@ -33,7 +42,8 @@ module.exports = [
         path: '/register',
         config: {
             handler: User.register,
-            id: 'register'
+            id: 'register',
+            auth: false
         }
     },    
     {
@@ -41,156 +51,33 @@ module.exports = [
         path: '/register',
         config: {
             handler: User.insert_user,
-            id: 'insert-user'
+            id: 'insert-user',
+            auth: false
         }
     },    
     {
         method: 'GET',
         path: '/login',
-        config: {
+        config: {            
             handler: User.login_view,
-            id: 'login-view'
+            id: 'login-view',
+            auth: false
         }
     },    
     {
         method: 'POST',
         path: '/login',
         config: {
+            validate: {
+                payload: {
+                    email: Joi.string().email().required(),
+                    password: Joi.string().min(2).max(200).required()
+                }
+            },
             handler: User.login,
-            id: 'login'
+            id: 'login',
+            auth: false
         }
     }
 ]
 
-
-// const routes = [
-    // {
-    //     method: 'GET',
-    //     path: '/',
-    //     config: {
-    //         handler: Index.index,
-    //         id: 'index'
-    //     }
-    // },
-    // {
-    //     method: 'GET',
-    //     path: '/about',
-    //     config: {
-    //         handler: About.about,
-    //         id: 'about'
-    //     }
-    // },    
-    // {
-    //     method: 'POST',
-    //     path: '/add-location',
-    //     config: {
-    //         handler: Location.insert_location,
-    //         id: 'add-location'
-    //     }
-    // },
-    // {
-    //     method: 'GET',
-    //     path: '/register',
-    //     config: {
-    //         handler: User.register,
-    //         id: 'register'
-    //     }
-    // },    
-    // {
-    //     method: 'POST',
-    //     path: '/register',
-    //     config: {
-    //         handler: User.insert_user,
-    //         id: 'insert-user'
-    //     }
-    // },    
-    // {
-    //     method: 'GET',
-    //     path: '/login',
-    //     config: {
-    //         handler: User.login_view,
-    //         id: 'login-view'
-    //     }
-    // },    
-    // {
-    //     method: 'POST',
-    //     path: '/login',
-    //     config: {
-    //         handler: User.login,
-    //         id: 'login'
-    //     }
-    // }
-// ];
- 
-// exports.routes = server => server.route(routes);
-
-
-// // These are the public assets. Goal is to serve css, js, partials, images, or bower packages.
-// exports.register = function(server, options, next){
-
-//    server.route([
-       
-//         {
-//             method: 'GET',
-//             path: '/',
-//             config: {
-//                 handler: Index.index,
-//                 id: 'index'
-//             }
-//         },
-//         {
-//             method: 'GET',
-//             path: '/about',
-//             config: {
-//                 handler: About.about,
-//                 id: 'about'
-//             }
-//         },    
-//         {
-//             method: 'POST',
-//             path: '/add-location',
-//             config: {
-//                 handler: Location.insert_location,
-//                 id: 'add-location'
-//             }
-//         },
-//         {
-//             method: 'GET',
-//             path: '/register',
-//             config: {
-//                 handler: User.register,
-//                 id: 'register'
-//             }
-//         },    
-//         {
-//             method: 'POST',
-//             path: '/register',
-//             config: {
-//                 handler: User.insert_user,
-//                 id: 'insert-user'
-//             }
-//         },    
-//         {
-//             method: 'GET',
-//             path: '/login',
-//             config: {
-//                 handler: User.login_view,
-//                 id: 'login-view'
-//             }
-//         },    
-//         {
-//             method: 'POST',
-//             path: '/login',
-//             config: {
-//                 handler: User.login,
-//                 id: 'login'
-//             }
-//         }
-//     ]);
-
-//     next();
-// }
-
-// exports.register.attributes = {
-//     name: 'front'
-// };

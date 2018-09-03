@@ -1,5 +1,5 @@
-exports.about = function(request, reply){
-    reply.view('about', {
+exports.about = function(request, h){
+    return h.view('about', {
         title: 'About Yo!',
         content: "Let's Go YOOOOOOO",
         page_path: request.route.settings.id,
