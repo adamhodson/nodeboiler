@@ -40,7 +40,7 @@ By having the front-end folder and server side folder be specific, it provides f
 [See the awesome people!](https://github.com/poeticninja/hapi-ninja/graphs/contributors)
 
 ## Credits
-Credit goes to all of the open source code that people have made available.
+Initial boilerplate strucutre and inspiration to Poetic Ninja. Credit goes to all of the open source code that people have made available.
 
 #### License
 
